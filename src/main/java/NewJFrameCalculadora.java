@@ -10,9 +10,9 @@
  */
 public class NewJFrameCalculadora extends javax.swing.JFrame {
 
-    /**
-     * Creates new form NewJFrameCalculadora
-     */
+    Double valor1, valor2, resultados;
+    String operador;
+
     public NewJFrameCalculadora() {
         initComponents();
     }
@@ -27,184 +27,376 @@ public class NewJFrameCalculadora extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel14 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jButton16 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButtonLimpar = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButtonDivisão = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButtonMultiplicação = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButtonSubtraçao = new javax.swing.JButton();
-        jButtonSomar = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButtonResultado = new javax.swing.JButton();
+        btReiniciar = new javax.swing.JButton();
+        btC = new javax.swing.JButton();
+        btExcluir = new javax.swing.JButton();
+        btDividir = new javax.swing.JButton();
+        bt7 = new javax.swing.JButton();
+        bt8 = new javax.swing.JButton();
+        bt9 = new javax.swing.JButton();
+        btMultiplicar = new javax.swing.JButton();
+        bt4 = new javax.swing.JButton();
+        bt5 = new javax.swing.JButton();
+        bt6 = new javax.swing.JButton();
+        btSubtrair = new javax.swing.JButton();
+        bt1 = new javax.swing.JButton();
+        bt2 = new javax.swing.JButton();
+        bt3 = new javax.swing.JButton();
+        btSomar = new javax.swing.JButton();
+        btMais_igual = new javax.swing.JButton();
+        bt0 = new javax.swing.JButton();
+        btVirgula = new javax.swing.JButton();
+        btIgual = new javax.swing.JButton();
+        jTestvisor = new javax.swing.JTextField();
 
         jLabel14.setText("jLabel14");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora Java");
 
-        jLabel1.setBackground(new java.awt.Color(51, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 255, 255));
-
         jPanel1.setLayout(new java.awt.GridLayout(0, 4, 4, 6));
 
-        jButton16.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButton16.setText("%");
-        jButton16.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jButton16);
-
-        jButton2.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButton2.setText("CE");
-        jButton2.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jButton2);
-
-        jButton1.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButton1.setText("C");
-        jButton1.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jButton1);
-
-        jButtonLimpar.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButtonLimpar.setText("EX");
-        jButtonLimpar.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jButtonLimpar);
-
-        jButton14.setText("jButton14");
-        jPanel1.add(jButton14);
-
-        jButton3.setText("jButton3");
-        jPanel1.add(jButton3);
-
-        jButton6.setText("jButton6");
-        jPanel1.add(jButton6);
-
-        jButtonDivisão.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButtonDivisão.setText("/");
-        jButtonDivisão.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jButtonDivisão);
-
-        jButton9.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButton9.setText("7");
-        jButton9.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jButton9);
-
-        jButton5.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButton5.setText("8");
-        jButton5.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jButton5);
-
-        jButton4.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButton4.setText("9");
-        jButton4.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jButton4);
-
-        jButton13.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButton13.setText("X");
-        jButton13.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jButton13);
-
-        jButtonMultiplicação.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButtonMultiplicação.setText("4");
-        jButtonMultiplicação.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jButtonMultiplicação);
-
-        jButton7.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButton7.setText("5");
-        jButton7.setPreferredSize(new java.awt.Dimension(30, 30));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btReiniciar.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        btReiniciar.setText("CE");
+        btReiniciar.setPreferredSize(new java.awt.Dimension(30, 30));
+        btReiniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btReiniciarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton7);
+        jPanel1.add(btReiniciar);
 
-        jButton8.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButton8.setText("6");
-        jButton8.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jButton8);
+        btC.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        btC.setText("C");
+        btC.setPreferredSize(new java.awt.Dimension(30, 30));
+        btC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btC);
 
-        jButton12.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButton12.setText("-");
-        jButton12.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jButton12);
+        btExcluir.setBackground(new java.awt.Color(255, 0, 102));
+        btExcluir.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        btExcluir.setForeground(new java.awt.Color(255, 255, 255));
+        btExcluir.setIcon(new javax.swing.ImageIcon("C:\\Users\\Geral\\Downloads\\icons8-limpar-símbolo-24.png")); // NOI18N
+        btExcluir.setPreferredSize(new java.awt.Dimension(30, 30));
+        jPanel1.add(btExcluir);
 
-        jButton10.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButton10.setText("1");
-        jButton10.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jButton10);
+        btDividir.setBackground(new java.awt.Color(51, 255, 0));
+        btDividir.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        btDividir.setText("/");
+        btDividir.setPreferredSize(new java.awt.Dimension(30, 30));
+        btDividir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDividirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btDividir);
 
-        jButton11.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButton11.setText("2");
-        jButton11.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jButton11);
+        bt7.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        bt7.setText("7");
+        bt7.setPreferredSize(new java.awt.Dimension(30, 30));
+        bt7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt7ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bt7);
 
-        jButtonSubtraçao.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButtonSubtraçao.setText("3");
-        jButtonSubtraçao.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jButtonSubtraçao);
+        bt8.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        bt8.setText("8");
+        bt8.setPreferredSize(new java.awt.Dimension(30, 30));
+        bt8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt8ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bt8);
 
-        jButtonSomar.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButtonSomar.setText("+");
-        jButtonSomar.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jButtonSomar);
+        bt9.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        bt9.setText("9");
+        bt9.setPreferredSize(new java.awt.Dimension(30, 30));
+        bt9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt9ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bt9);
 
-        jButton15.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButton15.setText("+/-");
-        jPanel1.add(jButton15);
+        btMultiplicar.setBackground(new java.awt.Color(51, 255, 0));
+        btMultiplicar.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        btMultiplicar.setText("X");
+        btMultiplicar.setPreferredSize(new java.awt.Dimension(30, 30));
+        btMultiplicar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btMultiplicarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btMultiplicar);
 
-        jButton18.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButton18.setText("0");
-        jButton18.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jButton18);
+        bt4.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        bt4.setText("4");
+        bt4.setPreferredSize(new java.awt.Dimension(30, 30));
+        bt4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bt4);
 
-        jButton19.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButton19.setText(",");
-        jButton19.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jButton19);
+        bt5.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        bt5.setText("5");
+        bt5.setPreferredSize(new java.awt.Dimension(30, 30));
+        bt5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bt5);
 
-        jButtonResultado.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 18)); // NOI18N
-        jButtonResultado.setText("=");
-        jButtonResultado.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jButtonResultado);
+        bt6.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        bt6.setText("6");
+        bt6.setPreferredSize(new java.awt.Dimension(30, 30));
+        bt6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt6ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bt6);
+
+        btSubtrair.setBackground(new java.awt.Color(51, 255, 0));
+        btSubtrair.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        btSubtrair.setText("-");
+        btSubtrair.setPreferredSize(new java.awt.Dimension(30, 30));
+        btSubtrair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSubtrairActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btSubtrair);
+
+        bt1.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        bt1.setText("1");
+        bt1.setPreferredSize(new java.awt.Dimension(30, 30));
+        bt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bt1);
+
+        bt2.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        bt2.setText("2");
+        bt2.setPreferredSize(new java.awt.Dimension(30, 30));
+        bt2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bt2);
+
+        bt3.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        bt3.setText("3");
+        bt3.setPreferredSize(new java.awt.Dimension(30, 30));
+        bt3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bt3);
+
+        btSomar.setBackground(new java.awt.Color(0, 255, 51));
+        btSomar.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        btSomar.setText("+");
+        btSomar.setPreferredSize(new java.awt.Dimension(30, 30));
+        btSomar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSomarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btSomar);
+
+        btMais_igual.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        btMais_igual.setText("+/-");
+        jPanel1.add(btMais_igual);
+
+        bt0.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        bt0.setText("0");
+        bt0.setPreferredSize(new java.awt.Dimension(30, 30));
+        bt0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt0ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bt0);
+
+        btVirgula.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        btVirgula.setText(",");
+        btVirgula.setPreferredSize(new java.awt.Dimension(30, 30));
+        jPanel1.add(btVirgula);
+
+        btIgual.setBackground(new java.awt.Color(0, 255, 51));
+        btIgual.setFont(new java.awt.Font("Humnst777 Lt BT", 1, 24)); // NOI18N
+        btIgual.setText("=");
+        btIgual.setPreferredSize(new java.awt.Dimension(30, 30));
+        btIgual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btIgualActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btIgual);
+
+        jTestvisor.setBackground(new java.awt.Color(0, 0, 0));
+        jTestvisor.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 48)); // NOI18N
+        jTestvisor.setForeground(new java.awt.Color(255, 255, 255));
+        jTestvisor.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTestvisor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTestvisorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
+            .addComponent(jTestvisor)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTestvisor, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 495, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+private void digita(String caracteres) {
+        if (jTestvisor.getText().equals("0,00")) {
+            jTestvisor.setText(caracteres);
+        } else {
+            if (caracteres.equals(",") && jTestvisor.getText().contains(",")) {
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+            } else {
+                jTestvisor.setText(jTestvisor.getText().concat(caracteres));
+            }
+        }
+    }
+
+    private void limpar() {
+
+        jTestvisor.setText("");
+
+    }
+    private void bt5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt5ActionPerformed
+        digita("5");        // TODO add your handling code here:
+    }//GEN-LAST:event_bt5ActionPerformed
+
+    private void bt0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt0ActionPerformed
+        digita("0");        // TODO add your handling code here:
+    }//GEN-LAST:event_bt0ActionPerformed
+
+    private void btIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btIgualActionPerformed
+        valor2 = Double.parseDouble(jTestvisor.getText());
+        if (operador.equals("+")) {
+            resultados = valor1 + valor2;
+            jTestvisor.setText(String.valueOf(resultados));
+
+            //operador = "+";
+        } else if (operador.equals("-")) {
+            resultados = valor1 - valor2;
+            jTestvisor.setText(String.valueOf(resultados));
+            // operador = "-";
+        }else if (operador.equals("x")) {
+            resultados = valor1 * valor2;
+            jTestvisor.setText(String.valueOf(resultados));
+        }else if (operador.equals("/")) {
+            resultados = valor1 / valor2;
+            jTestvisor.setText(String.valueOf(resultados));
+        }
+    }//GEN-LAST:event_btIgualActionPerformed
+
+    private void bt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt1ActionPerformed
+        digita("1");        // TODO add your handling code here:
+    }//GEN-LAST:event_bt1ActionPerformed
+
+    private void bt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt2ActionPerformed
+        digita("2");        // TODO add your handling code here:
+    }//GEN-LAST:event_bt2ActionPerformed
+
+    private void bt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt3ActionPerformed
+        digita("3");        // TODO add your handling code here:
+    }//GEN-LAST:event_bt3ActionPerformed
+
+    private void bt6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt6ActionPerformed
+        digita("6");        // TODO add your handling code here:
+    }//GEN-LAST:event_bt6ActionPerformed
+
+    private void bt4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt4ActionPerformed
+        digita("4");        // TODO add your handling code here:
+    }//GEN-LAST:event_bt4ActionPerformed
+
+    private void bt9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt9ActionPerformed
+        digita("9");        // TODO add your handling code here:
+    }//GEN-LAST:event_bt9ActionPerformed
+
+    private void bt8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt8ActionPerformed
+        digita("8");        // TODO add your handling code here:
+    }//GEN-LAST:event_bt8ActionPerformed
+
+    private void bt7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt7ActionPerformed
+        digita("7");        // TODO add your handling code here:
+    }//GEN-LAST:event_bt7ActionPerformed
+
+    private void btCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCActionPerformed
+        jTestvisor.setText("0");    
+      
+    }//GEN-LAST:event_btCActionPerformed
+
+    private void btSomarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSomarActionPerformed
+        valor1 = Double.parseDouble(jTestvisor.getText());
+        limpar();
+        operador = "+";
+        //digita("+");
+// TODO add your handling code here:
+    }//GEN-LAST:event_btSomarActionPerformed
+
+    private void jTestvisorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTestvisorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_jTestvisorActionPerformed
+
+    private void btSubtrairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSubtrairActionPerformed
+        valor1 = Double.parseDouble(jTestvisor.getText());
+        limpar();
+        operador = "-";
+        //digita("-");
+    }//GEN-LAST:event_btSubtrairActionPerformed
+
+    private void btReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btReiniciarActionPerformed
+        valor1 = 0.00;
+        valor2 = 0.00;
+        resultados = 0.00;
+        jTestvisor.setText("0");
+        //limpar();
+// TODO add your handling code here:
+    }//GEN-LAST:event_btReiniciarActionPerformed
+
+    private void btMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMultiplicarActionPerformed
+   valor1 = Double.parseDouble(jTestvisor.getText());
+        limpar();
+        operador = "x";        // TODO add your handling code here:
+    }//GEN-LAST:event_btMultiplicarActionPerformed
+
+    private void btDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDividirActionPerformed
+   valor1 = Double.parseDouble(jTestvisor.getText());
+        limpar();
+        operador = "/";        // TODO add your handling code here:
+    }//GEN-LAST:event_btDividirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,32 +434,28 @@ public class NewJFrameCalculadora extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JButton jButtonDivisão;
-    private javax.swing.JButton jButtonLimpar;
-    private javax.swing.JButton jButtonMultiplicação;
-    private javax.swing.JButton jButtonResultado;
-    private javax.swing.JButton jButtonSomar;
-    private javax.swing.JButton jButtonSubtraçao;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton bt0;
+    private javax.swing.JButton bt1;
+    private javax.swing.JButton bt2;
+    private javax.swing.JButton bt3;
+    private javax.swing.JButton bt4;
+    private javax.swing.JButton bt5;
+    private javax.swing.JButton bt6;
+    private javax.swing.JButton bt7;
+    private javax.swing.JButton bt8;
+    private javax.swing.JButton bt9;
+    private javax.swing.JButton btC;
+    private javax.swing.JButton btDividir;
+    private javax.swing.JButton btExcluir;
+    private javax.swing.JButton btIgual;
+    private javax.swing.JButton btMais_igual;
+    private javax.swing.JButton btMultiplicar;
+    private javax.swing.JButton btReiniciar;
+    private javax.swing.JButton btSomar;
+    private javax.swing.JButton btSubtrair;
+    private javax.swing.JButton btVirgula;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTestvisor;
     // End of variables declaration//GEN-END:variables
 }
